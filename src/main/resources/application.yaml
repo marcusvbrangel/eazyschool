@@ -1,0 +1,21 @@
+
+spring:
+  application:
+    name: eazyschool
+  profiles:
+    active: development
+
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+server:
+  port: 8085
+  servlet:
+    context-path: /eazyschool
+
+logging:
+  level:
+    com.marcusvbrangel.eazyschool: INFO
+    org.springframework.web: INFO
+
+debug: false
