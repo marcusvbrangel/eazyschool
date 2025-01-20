@@ -10,4 +10,8 @@ public class ContactController {
     public String contactPage() {
         return "contact.html";
     }
+
+    public void teste() {
+        System.out.println("Teste");
+    }
 }
