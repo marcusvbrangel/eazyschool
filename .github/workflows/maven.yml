@@ -17,7 +17,6 @@ on:
   workflow_dispatch:
 
 env:
-
   OS: ubuntu-24.04
   JAVA_VERSION: '21'
   JAVA_DISTRIBUTION: 'temurin'
