@@ -13,12 +13,8 @@ on:
     branches:
       - 'main'
       - 'development'
-      - 'feature/**'
-      - 'bugfix/**'
   pull_request:
     branches:
-      - 'main'
-      - 'development'
       - 'feature/**'
       - 'bugfix/**'
 
