@@ -16,17 +16,17 @@ on:
 
   workflow_dispatch:
 
-env:
-  OS: ubuntu-24.04
-  JAVA_VERSION: '21'
-  JAVA_DISTRIBUTION: 'temurin'
+#env:
+#  OS: ubuntu-24.04
+#  JAVA_VERSION: '21'
+#  JAVA_DISTRIBUTION: 'temurin'
 
 jobs:
 
   test:
 
     name: Test
-    runs-on: ${{ env.OS }}
+    runs-on: ubuntu-24.04
 
     steps:
 
@@ -36,8 +36,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: ${{ env.JAVA_VERSION }}
-          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: '21'
+          distribution: 'temurin'
           cache: maven
 
       - name: Test
@@ -46,7 +46,7 @@ jobs:
   build:
 
     name: Build
-    runs-on: ${{ env.OS }}
+    runs-on: ubuntu-24.04
     needs: test
 
     steps:
@@ -57,8 +57,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: ${{ env.JAVA_VERSION }}
-          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: '21'
+          distribution: 'temurin'
           cache: maven
 
       - name: Build
