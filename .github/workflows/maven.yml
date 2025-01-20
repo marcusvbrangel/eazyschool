@@ -19,8 +19,8 @@ on:
 env:
 
   OS: ubuntu-24.04
-  JAVA_VERSION: ${{ env.JAVA_VERSION }}
-  JAVA_DISTRIBUTION: ${{ env.JAVA_DISTRIBUTION }}
+  JAVA_VERSION: '21'
+  JAVA_DISTRIBUTION: 'temurin'
 
 jobs:
 
@@ -58,8 +58,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
-          distribution: 'temurin'
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
           cache: maven
 
       - name: Build
