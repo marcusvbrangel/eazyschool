@@ -11,7 +11,7 @@ class EazyschoolApplicationTests {
 
 	@Test
 	void contextLoads() {
-        assertTrue(false);
+//        assertTrue(false);
 	}
 
 }

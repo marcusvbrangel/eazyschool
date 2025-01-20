@@ -13,6 +13,7 @@ on:
     branches:
       - 'bugfix/**'
       - 'feature/**'
+
 #  pull_request:
 #      branches:
 #      - 'main'
@@ -21,22 +22,40 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
 
+  tests:
+
+    name: Tests
     runs-on: ubuntu-24.04
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build
-      run: mvn -B package --file pom.xml
-    - name: Test
-      run: mvn test
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Test
+        run: mvn test
+
+#    - uses: actions/checkout@v4
+#    - name: Set up JDK 21
+
+      # 2. Configurar a JDK na máquina...
+#      uses: actions/setup-java@v4
+#      with:
+#        java-version: '21'
+#        distribution: 'temurin'
+#        cache: maven
+#    - name: Build
+#      run: mvn -B package --file pom.xml
+#    - name: Test
+#      run: mvn test
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
