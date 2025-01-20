@@ -41,18 +41,7 @@ Contribuições são bem-vindas! Siga os passos abaixo para contribuir com o pro
 
 ## Issues
 Sinta-se à vontade para abrir uma issue caso encontre algum bug ou tenha uma sugestão de melhoria.      
-
+[Abrir uma Issue](https://github.com/marcusvbrangel/eazyschool/issues/new)
 
 ## Licença
 Este projeto é licenciado sob a Licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
-
-
-
-
-
-
-
-
-
-
-         
