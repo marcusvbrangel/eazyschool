@@ -4,12 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+public class ContactController {
 
-    @RequestMapping(value = {"", "/", "/home"})
-    public String homePage() {
-        return "home.html";
+    @RequestMapping("/contact")
+    public String contactPage() {
+        return "contact.html";
     }
-
-
 }

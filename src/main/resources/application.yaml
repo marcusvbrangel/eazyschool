@@ -4,14 +4,16 @@ spring:
     name: eazyschool
   profiles:
     active: development
+  thymeleaf:
+      cache: false
 
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 server:
   port: 8085
-  servlet:
-    context-path: /eazyschool
+#  servlet:
+#    context-path: /eazyschool
 
 logging:
   level:
