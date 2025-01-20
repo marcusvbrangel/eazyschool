@@ -14,4 +14,12 @@ public class ContactController {
     public void teste() {
         System.out.println("Teste");
     }
+
+    public void teste2() {
+        System.out.println("Teste");
+    }
+
+    public void teste3() {
+        System.out.println("Teste");
+    }
 }
