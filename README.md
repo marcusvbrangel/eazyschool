@@ -1,3 +1,6 @@
+
+[![Java CI with Maven](https://github.com/marcusvbrangel/eazyschool/actions/workflows/maven.yml/badge.svg)](https://github.com/marcusvbrangel/eazyschool/actions/workflows/maven.yml)
+
 # Eazy School
 
 Eazy School é uma aplicação web desenvolvida em Java utilizando o Spring Framework.
