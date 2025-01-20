@@ -44,8 +44,7 @@ Sinta-se à vontade para abrir uma issue caso encontre algum bug ou tenha uma su
 
 
 ## Licença
-Este projeto não possui uma licença específica definida. Por favor, atualize este arquivo com a licença apropriada, se necessário.
-
+Este projeto é licenciado sob a Licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
 
 
