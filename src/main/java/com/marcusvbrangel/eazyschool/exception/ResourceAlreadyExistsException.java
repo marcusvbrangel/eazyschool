@@ -7,7 +7,7 @@ public class ResourceAlreadyExistsException extends RuntimeException {
     }
 
     public ResourceAlreadyExistsException() {
-        this("The resource cannot be found");
+        this("The resource already exists");
     }
 
 }

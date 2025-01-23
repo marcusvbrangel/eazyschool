@@ -7,6 +7,6 @@ public class ResourceInUseException extends RuntimeException {
     }
 
     public ResourceInUseException() {
-        this("The resource cannot be found");
+        this("The resource already in use");
     }
 }
