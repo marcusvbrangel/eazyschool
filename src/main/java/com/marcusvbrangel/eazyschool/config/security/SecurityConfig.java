@@ -27,6 +27,7 @@ public class SecurityConfig {
 
         http.csrf((csrf) -> csrf.disable())
             .authorizeHttpRequests((requests) -> requests
+                .requestMatchers("/test/**").permitAll()
                 .requestMatchers("/dashboard").authenticated()
                 .requestMatchers("/", "home").permitAll()
                 .requestMatchers("/holidays/**").permitAll()
