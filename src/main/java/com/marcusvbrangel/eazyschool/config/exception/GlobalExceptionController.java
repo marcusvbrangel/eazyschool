@@ -35,7 +35,7 @@ public class GlobalExceptionController {
             requestUrl
         );
 
-        log.error("Erro interno no servidor, código do log: {}", errorResponse.getCodigoLog(), ex);
+        log.error("Erro interno no servidor, código do log: {}", errorResponse.codigoLog(), ex);
         return new ResponseEntity<>(errorResponse, httpStatus);
     }
 
@@ -56,7 +56,7 @@ public class GlobalExceptionController {
         );
 
         log.error("código do log: {}, mensagem: {}, método: {}, URL: {}",
-            errorResponse.getCodigoLog(), errorResponse.getFriendlyErrorMessage(), requestMethod, requestUrl, ex);
+            errorResponse.codigoLog(), errorResponse.friendlyErrorMessage(), requestMethod, requestUrl, ex);
         return new ResponseEntity<>(errorResponse, httpStatus);
     }
 
@@ -75,7 +75,7 @@ public class GlobalExceptionController {
             requestUrl
         );
 
-        log.error("Recurso em uso, código do log: {}", errorResponse.getCodigoLog(), ex);
+        log.error("Recurso em uso, código do log: {}", errorResponse.codigoLog(), ex);
         return new ResponseEntity<>(errorResponse, httpStatus);
     }
 
@@ -94,7 +94,7 @@ public class GlobalExceptionController {
             requestUrl
         );
 
-        log.error("Recurso já existe, código do log: {}", errorResponse.getCodigoLog(), ex);
+        log.error("Recurso já existe, código do log: {}", errorResponse.codigoLog(), ex);
         return new ResponseEntity<>(errorResponse, httpStatus);
     }
 
@@ -113,7 +113,7 @@ public class GlobalExceptionController {
             requestUrl
         );
 
-        log.error("Violação de restrição, código do log: {}", errorResponse.getCodigoLog(), ex);
+        log.error("Violação de restrição, código do log: {}", errorResponse.codigoLog(), ex);
         return new ResponseEntity<>(errorResponse, httpStatus);
     }
 
@@ -139,7 +139,7 @@ public class GlobalExceptionController {
             errors.put(fieldName, errorMessage);
         });
 
-        log.error("Erro de validação, código do log: {}", errorResponse.getCodigoLog(), ex);
+        log.error("Erro de validação, código do log: {}", errorResponse.codigoLog(), ex);
         return new ResponseEntity<>(errors, httpStatus);
     }
 
