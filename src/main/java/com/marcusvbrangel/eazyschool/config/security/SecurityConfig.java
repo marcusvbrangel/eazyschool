@@ -46,7 +46,6 @@ public class SecurityConfig {
                 .invalidateHttpSession(true)
                 .permitAll())
 
-
 //            .formLogin(Customizer.withDefaults())
             .httpBasic(Customizer.withDefaults());
 

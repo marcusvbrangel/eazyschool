@@ -1,0 +1,36 @@
+#
+#services:
+#  mysql:
+#    image: mysql:oraclelinux9
+#    container_name: eazyschool-database
+#    environment:
+#      MYSQL_ROOT_PASSWORD: rootpassword
+#      MYSQL_DATABASE: 'eazyschool'
+#      MYSQL_USER: 'admin'
+#      MYSQL_PASSWORD: '1234'
+#    ports:
+#      - "3306:3306"
+#    volumes:
+#      - mysql_data:/var/lib/mysql
+#
+#volumes:
+#  mysql_data:
+#
+
+version: '3.3'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: eazyschool-db
+#    restart: always
+    environment:
+      MYSQL_DATABASE: 'eazyschool'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: '1234'
+      MYSQL_ROOT_PASSWORD: '1234'
+    ports:
+      - '3306:3306'
+    volumes:
+      - eazyschool-db:/var/lib/mysql
+volumes:
+    eazyschool-db:
