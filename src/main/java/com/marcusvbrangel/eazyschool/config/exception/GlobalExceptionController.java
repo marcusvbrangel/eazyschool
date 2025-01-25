@@ -5,7 +5,6 @@ import com.marcusvbrangel.eazyschool.exception.ResourceInUseException;
 import com.marcusvbrangel.eazyschool.exception.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolationException;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 
-@Slf4j
 @RestControllerAdvice
 public class GlobalExceptionController {
 
@@ -35,7 +33,7 @@ public class GlobalExceptionController {
             requestUrl
         );
 
-        log.error("Erro interno no servidor, código do log: {}", errorResponse.codigoLog(), ex);
+//        log.error("Erro interno no servidor, código do log: {}", errorResponse.codigoLog(), ex);
         return new ResponseEntity<>(errorResponse, httpStatus);
     }
 
@@ -55,8 +53,8 @@ public class GlobalExceptionController {
 
         );
 
-        log.error("código do log: {}, mensagem: {}, método: {}, URL: {}",
-            errorResponse.codigoLog(), errorResponse.friendlyErrorMessage(), requestMethod, requestUrl, ex);
+//        log.error("código do log: {}, mensagem: {}, método: {}, URL: {}",
+//            errorResponse.codigoLog(), errorResponse.friendlyErrorMessage(), requestMethod, requestUrl, ex);
         return new ResponseEntity<>(errorResponse, httpStatus);
     }
 
@@ -75,7 +73,7 @@ public class GlobalExceptionController {
             requestUrl
         );
 
-        log.error("Recurso em uso, código do log: {}", errorResponse.codigoLog(), ex);
+//        log.error("Recurso em uso, código do log: {}", errorResponse.codigoLog(), ex);
         return new ResponseEntity<>(errorResponse, httpStatus);
     }
 
@@ -94,7 +92,7 @@ public class GlobalExceptionController {
             requestUrl
         );
 
-        log.error("Recurso já existe, código do log: {}", errorResponse.codigoLog(), ex);
+//        log.error("Recurso já existe, código do log: {}", errorResponse.codigoLog(), ex);
         return new ResponseEntity<>(errorResponse, httpStatus);
     }
 
@@ -113,7 +111,7 @@ public class GlobalExceptionController {
             requestUrl
         );
 
-        log.error("Violação de restrição, código do log: {}", errorResponse.codigoLog(), ex);
+//        log.error("Violação de restrição, código do log: {}", errorResponse.codigoLog(), ex);
         return new ResponseEntity<>(errorResponse, httpStatus);
     }
 
@@ -139,7 +137,7 @@ public class GlobalExceptionController {
             errors.put(fieldName, errorMessage);
         });
 
-        log.error("Erro de validação, código do log: {}", errorResponse.codigoLog(), ex);
+//        log.error("Erro de validação, código do log: {}", errorResponse.codigoLog(), ex);
         return new ResponseEntity<>(errors, httpStatus);
     }
 
