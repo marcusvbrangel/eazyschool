@@ -1,6 +1,7 @@
 package com.marcusvbrangel.eazyschool.repository;
 
 import com.marcusvbrangel.eazyschool.model.Contact;
+import com.marcusvbrangel.eazyschool.rommappers.ContactRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;

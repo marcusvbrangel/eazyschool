@@ -8,7 +8,9 @@ import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 
-public class Contact {
+public class Contact extends BaseEntity {
+
+    private int contactId;
 
     @NotBlank(message = "Name must not be blank")
     @Size(min = 3, message = "Name must be at least 3 characters")
@@ -80,18 +82,24 @@ public class Contact {
         this.status = status;
     }
 
+    public int getContactId() {
+        return contactId;
+    }
+
+    public void setContactId(int contactId) {
+        this.contactId = contactId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Contact contact = (Contact) o;
-        return Objects.equals(name, contact.name) && Objects.equals(mobileNum, contact.mobileNum) &&
-            Objects.equals(email, contact.email) && Objects.equals(subject, contact.subject) &&
-            Objects.equals(message, contact.message);
+        return contactId == contact.contactId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, mobileNum, email, subject, message);
+        return Objects.hashCode(contactId);
     }
 
     @Override

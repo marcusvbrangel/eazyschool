@@ -1,11 +1,13 @@
 package com.marcusvbrangel.eazyschool.rommappers;
 
+import com.marcusvbrangel.eazyschool.constants.EazySchoolEnum;
 import com.marcusvbrangel.eazyschool.model.Contact;
+import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ContactRowMapper {
+public class ContactRowMapper  implements RowMapper<Contact> {
     @Override
     public Contact mapRow(ResultSet rs, int rowNum) throws SQLException {
         Contact contact = new Contact();
@@ -15,9 +17,9 @@ public class ContactRowMapper {
         contact.setEmail(rs.getString("EMAIL"));
         contact.setSubject(rs.getString("SUBJECT"));
         contact.setMessage(rs.getString("MESSAGE"));
-        contact.setStatus(rs.getString("STATUS"));
+        contact.setStatus(EazySchoolEnum.valueOf(rs.getString("STATUS")));
         contact.setCreatedAt(rs.getTimestamp("CREATED_AT").toLocalDateTime());
-        contact.setCreatedBy(rs.getString("CREATED_BY"));
+        contact.setCreatedBy(EazySchoolEnum.valueOf(rs.getString("CREATED_BY")));
 
         if(null!=rs.getTimestamp("UPDATED_AT")){
             contact.setUpdatedAt(rs.getTimestamp("UPDATED_AT").toLocalDateTime());
